@@ -1,0 +1,66 @@
+{
+  "Home": "Home",
+  "Works": "Works",
+  "contact": "Contact",
+  "About": "About me",
+  "See My Works": "See My Works",
+  "Skills": "Skills",
+  "Experience": "Experience",
+  "Education": "Education",
+  "intro": "<p>Hi, This is <strong>Victor Mendes</strong></p><p>Highly passionate about <strong>Web & Mobile Development</strong>. Over the past <strong>few years</strong>, I’ve been building projects combining front-end and back-end technologies. I have experience with tools like <strong>React</strong>, <strong>Vue</strong>, <strong>TailwindCSS</strong>, and I'm currently deepening my skills in <strong>Vue.js</strong> and <strong>Nuxt</strong>.</p><p>I'm currently pursuing a degree in <strong>Systems Analysis and Development</strong> at <strong>UNISUAM</strong> and working as a <strong>Front-End Development Intern</strong>, where I continue to grow by solving real-world problems with clean, efficient code.</p><p>I am always open to learning new technologies and building meaningful digital experiences.</p>",
+  "experience": {
+    "designation": "Front-End Development Intern",
+    "company": "Centro Brasileiro de Pesquisas Físicas (CBPF)",
+    "timeline": "Nov 2024 - Present"
+  },
+  "responsibilities": "<ul><li>Develop and maintain responsive user interfaces using Vue.js, Nuxt and TailwindCSS</li><li>Collaborate with the team to implement new features and improvements</li><li>Write clean, maintainable code while following best practices</li><li>Continuously learn and apply new technologies in real-world projects</li></ul>",
+  "education": {
+    "degree1": "Technologist in Systems Analysis and Development",
+    "institute1": "UNISUAM",
+    "timeline1": "March 2024 - Expected 2026",
+
+    "degree2": "Technical Course in Informatics",
+    "institute2": "SENAC",
+    "timeline2": "2019 - 2021"
+  },
+  "Get In Touch": "Get In Touch",
+  "Quick Contact": "Quick Contact",
+  "Click Here": "Click Here",
+  "Don't like forms? Then WhatsApp me!": "Don't like forms? Then WhatsApp me!",
+  "Location": "Location",
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "Enter your name",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "subject": "Subject",
+    "subjectPlaceholder": "Enter the subject of the message (optional)",
+    "message": "Message",
+    "messagePlaceholder": "Enter your message",
+    "sendMessage": "Send Message"
+  },
+  "Brazil, Rio de Janeiro": "Brazil, Rio de Janeiro",
+  "footer.designedBy": "Designed & Built by",
+  "My Works": "My Works",
+  "See More": "See More",
+  "See Less": "See Less",
+   "projects":{
+    "projectA": {
+      "description": "<p>It's a responsive music player web application built with pure HTML, CSS, and JavaScript. The player allows users to listen to MP3 tracks directly in the browser, with a custom-designed interface. I developed this project focusing on a clean layout, intuitive controls, and smooth user experience. The goal was to create a lightweight and accessible platform to play songs or beats on both desktop and mobile devices.</p>"
+    },
+    "projectB": {
+      "description": "<p>It's a responsive e-commerce website for an açaí shop, built with HTML, Tailwind CSS, and JavaScript. The platform allows users to browse products such as açaí cups in different sizes, with a modern and mobile-friendly layout. I developed this project focusing on simple and efficient navigation, an attractive design, and essential features for an online store.</p>"
+    },
+    "projectC": {
+      "description": "<p>It's an institutional website developed as my first internship project at CBPF. I used Vue.js, TypeScript, Tailwind CSS, and Nuxt.js to build a modern, responsive, and easy-to-navigate page, presenting institutional information clearly and effectively.</p>"
+    }
+   },
+    "home": {
+    "strings": [
+      "Crafting Digital Experiences",
+      "Web Developer"
+    ]
+  },
+  "I am available for project based or part time offers!": "I am available for project based or part time offers!",
+  "Hire Me": "Hire Me"
+}

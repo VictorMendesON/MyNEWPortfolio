@@ -1,0 +1,69 @@
+{
+  "Home": "Início",
+  "About": "Sobre mim",
+  "Works": "Trabalhos",
+  "Contact": "Contato",
+  "About Me": "Sobre mim",
+  "See My Works": "Veja meus trabalhos",
+  "Skills": "Habilidades",
+  "Experience": "Experiência",
+  "Education": "Educação",
+  "intro": "<p>Olá, eu sou o <strong>Victor Mendes</strong></p><p>Sou apaixonado por <strong>Desenvolvimento Web e Mobile</strong>. Nos últimos <strong>anos</strong>, venho construindo projetos que combinam tecnologias de front-end e back-end. Tenho experiência com ferramentas como <strong>React</strong>, <strong>Vue</strong>, <strong>TailwindCSS</strong> e atualmente estou aprofundando meus conhecimentos em <strong>Vue.js</strong> e <strong>Nuxt</strong>.</p><p>Atualmente curso <strong>Análise e Desenvolvimento de Sistemas</strong> na <strong>UNISUAM</strong> e trabalho como <strong>Estagiário em Desenvolvimento Front-End</strong>, onde continuo evoluindo ao resolver problemas reais com código limpo e eficiente.</p><p>Estou sempre aberto a aprender novas tecnologias e criar experiências digitais significativas.</p>",
+  "experience": {
+    "designation": "Estagiário em Desenvolvimento Front-End",
+    "company": "Centro Brasileiro de Pesquisas Físicas (CBPF)",
+    "timeline": "Nov 2024 - Atual"
+  },
+  "designation": "Estagiário em Desenvolvimento Front-End",
+  "responsibilities": "<ul><li>Desenvolver e manter interfaces responsivas usando Vue.js, Nuxt e TailwindCSS</li><li>Colaborar com a equipe para implementar novos recursos e melhorias</li><li>Escrever código limpo e sustentável seguindo boas práticas</li><li>Aprender continuamente e aplicar novas tecnologias em projetos reais</li></ul>",
+  "education": {
+    "degree1": "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+    "institute1": "UNISUAM",
+    "timeline1": "Março de 2024 - Previsto para 2026",
+
+    "degree2": "Curso Técnico em Informática",
+    "institute2": "SENAC",
+    "timeline2": "2019 - 2021"
+  },
+  "Get In Touch": "Entre em Contato",
+  "Quick Contact": "Contato Rápido",
+  "Click Here": "Clique Aqui",
+  "Don't like forms? Then WhatsApp me!": "Não gosta de formulários? Então me mande uma mensagem no WhatsApp!",
+  "Location": "Localização",
+   "form": {
+    "name": "Nome",
+    "namePlaceholder": "Digite seu nome",
+    "email": "Email",
+    "emailPlaceholder": "Digite seu email",
+    "subject": "Assunto",
+    "subjectPlaceholder": "Digite o assunto da mensagem (opcional)",
+    "message": "Mensagem",
+    "messagePlaceholder": "Digite sua mensagem",
+    "sendMessage": "Enviar mensagem"
+  },
+   "Brazil, Rio de Janeiro": "Brasil, Rio de Janeiro",
+   "footer.designedBy": "Desenhado e Desenvolvido por",
+   "My Works": "Meus Trabalhos",
+   "See More": "Ver Mais",
+   "See Less": "Ver Menos",
+    "projects":{
+      "projectA": {
+        "description": "<p>É um aplicativo web responsivo de reprodução de músicas (MP3), desenvolvido com HTML, CSS puro e JavaScript. O player permite que os usuários escutem faixas diretamente no navegador, com uma interface personalizada e estilizada do zero. Desenvolvi esse projeto focando em um layout limpo, controles intuitivos e uma experiência de uso fluida. A ideia foi criar uma plataforma leve e acessível para ouvir músicas ou beats, tanto em dispositivos desktop quanto móveis.</p>"
+      },
+      "projectB": {
+        "description": "<p>É um site e-commerce responsivo de uma loja de açaí, desenvolvido com HTML, Tailwind CSS e JavaScript. A plataforma permite a visualização de produtos, como copos de açaí em diferentes tamanhos, com um layout moderno e adaptado para dispositivos móveis. Desenvolvi esse projeto focando em uma navegação simples e eficiente, com design atrativo e funcionalidades essenciais para uma loja virtual.</p>"
+      },
+      "projectC": {
+        "description": "<p>É um site institucional desenvolvido como meu primeiro projeto de estágio no CBPF. Utilizei Vue.js, TypeScript, Tailwind CSS e Nuxt.js para construir uma página moderna, responsiva e de fácil navegação, apresentando informações institucionais de forma clara e eficaz.</p>"
+      }
+    },
+    "home": {
+    "strings": [
+      "Criando Experiências Digitais",
+      "Desenvolvedor Web"
+    ]
+  },
+  "Hire Me": "Me contrate",
+  "I am available for project based or part time offers!": "Estou disponível para ofertas de projetos ou meio período!"
+
+}
