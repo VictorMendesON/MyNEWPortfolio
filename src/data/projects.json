@@ -24,15 +24,6 @@
             "title": "InScience",
             "tags": ["Tailwind CSS", "TypeScript", "Vue.js", "Nuxt.js"],
             "description": "projects.projectC.description"
-        },
-        {
-            "id": 4,
-            "image": "images/project_3.jpg",
-            "category": "Client Project",
-            "title": "Canbe BD",
-            "tags": ["Bootstrap", "Laravel", "Livewire"],
-            "live_link": "http://canbebd.com",
-            "description": "<p>It's a company profile with ecommerce website for a well known medical instrument distributor in Bangladesh. It was one my project based work for a client built with Laravel 8, Bootstrap & Livewire.</p>"
         }
     ]
 }
