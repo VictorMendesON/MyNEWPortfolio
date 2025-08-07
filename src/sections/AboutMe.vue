@@ -75,7 +75,7 @@ let currentTab = ref(1);
                                 <div class="prose dark:prose-invert prose-teal tracking-wide mb-7 text-left md:text-justify">
                                     <p v-html="$t ('intro')"></p>
                                 </div>
-                                <a href="#" target="_blank" class="text-primary-500 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium flex items-center justify-start w-fit transition-all duration-300">
+                                <a href="https://www.linkedin.com/in/victor-de-paula-0a9b75215/" target="_blank" class="text-primary-500 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium flex items-center justify-start w-fit transition-all duration-300">
                                     <span class="mr-2">My Resume</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />

@@ -1,13 +1,16 @@
 import { ref } from 'vue';
 
+const mobileNav = ref({ show: false });
+const loadMobileNav = ref(true);
+
+function toggleMobileNav() {
+  mobileNav.value.show = !mobileNav.value.show;
+}
+
 export function useMobileNav() {
-  const loadMobileNav = ref(window.innerWidth < 640); 
-  const mobileNav = ref(false);
-
-  const toggleMobileNav = () => {
-    mobileNav.value = !mobileNav.value;
-    console.log('mobileNav:', mobileNav.value); 
+  return {
+    mobileNav,
+    loadMobileNav,
+    toggleMobileNav
   };
-
-  return { mobileNav, loadMobileNav, toggleMobileNav };
 }

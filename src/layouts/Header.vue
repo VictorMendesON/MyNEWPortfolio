@@ -33,7 +33,7 @@ let { mobileNav, loadMobileNav, toggleMobileNav } = useMobileNav();
 
             <div class="flex md:hidden items-center">
                 <DarkModeSwitch />
-                <button @click="toggleMobileNav()">
+                <button @click="toggleMobileNav">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 fill-primary-500 dark:fill-primary-400 ml-5" viewBox="0 0 24 24">
                         <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
                     </svg>
@@ -41,8 +41,8 @@ let { mobileNav, loadMobileNav, toggleMobileNav } = useMobileNav();
             </div>
 
             <div class="absolute right-32 flex items-center">
-                <button @click="toggleLanguage" :class="[ 'relative w-20 h-10 md:w-24 md:h-12 rounded-full transition-all duration-500 shadow-md', currentLang === 'en' ? 'bg-blue-500' : 'bg-green-600']">
-                    <span :class="[ 'absolute top-0.5 md:top-1 left-1 size-9 md:w-10 md:h-10 rounded-full flex items-center justify-center text-2xl transition-all duration-500', currentLang === 'en' ? 'translate-x-12 bg-blue-400' : 'translate-x-0 bg-yellow-400']">
+                <button @click="toggleLanguage" :class="['relative w-12 h-12 left-24 md:w-24 md:h-12 rounded-full transition-all duration-500 shadow-md', currentLang === 'en' ? 'bg-blue-500' : 'bg-gradient-to-l from-[#16A7E8]']">
+                    <span :class="[ 'absolute top-1 left-1 w-10 h-10 md:w-10 md:h-10 rounded-full flex items-center justify-center text-2xl transition-all duration-500', currentLang === 'en' ? 'md:translate-x-12 bg-blue-400' : 'md:translate-x-0 bg-gradient-to-l from-[#16a6e880]']">
                         {{ currentLang === 'en' ? '🇺🇸' : '🇧🇷' }}
                     </span>
                 </button>
@@ -50,7 +50,6 @@ let { mobileNav, loadMobileNav, toggleMobileNav } = useMobileNav();
         </nav>
     </header>
 
-    <!-- Mobile Nav -->
     <template v-if="loadMobileNav">
         <transition name="fade" mode="out-in">
             <nav v-show="mobileNav.show" class="py-5 fixed bottom-0 left-0 right-0 bg-slate-200/80 dark:bg-[#0B1120]/80 shadow backdrop-blur-2xl z-40 block md:hidden">
@@ -87,7 +86,6 @@ let { mobileNav, loadMobileNav, toggleMobileNav } = useMobileNav();
             </nav>
         </transition>
     </template>
-    <!-- Mobile Nav -->
 </template>
 
 <style scoped>
