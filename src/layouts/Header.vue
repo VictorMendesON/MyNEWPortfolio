@@ -5,14 +5,26 @@ import { useMobileNav } from "@/composables/mobile-nav";
 import LinkButton from "@/components/LinkButton.vue";
 import DarkModeSwitch from "@/components/DarkModeSwitch.vue";
 import { useI18n } from 'vue-i18n'
+
 const { locale } = useI18n()
 const currentLang = ref(locale.value)
-
-const isEnglish = ref(false)
+const isFlipped = ref(false);
+const targetFlag = ref("🇺🇸");
 
 function toggleLanguage() {
-  currentLang.value = currentLang.value === 'en' ? 'pt' : 'en'
-  locale.value = currentLang.value
+
+  targetFlag.value = currentLang.value === "en" ? "🇧🇷" : "🇺🇸";
+
+  isFlipped.value = true; 
+
+  setTimeout(() => {
+    currentLang.value = currentLang.value === "en" ? "pt" : "en";
+    locale.value = currentLang.value;
+  }, 150);
+
+  setTimeout(() => {
+    isFlipped.value = false;
+  }, 400);
 }
 const { t } = useI18n()
 
@@ -40,14 +52,23 @@ let { mobileNav, loadMobileNav, toggleMobileNav } = useMobileNav();
                 </button>
             </div>
 
-            <div class="absolute right-32 flex items-center">
-                <button @click="toggleLanguage" :class="['relative w-12 h-12 left-24 md:w-24 md:h-12 rounded-full transition-all duration-500 shadow-md', currentLang === 'en' ? 'bg-blue-500' : 'bg-gradient-to-l from-[#16A7E8]']">
-                    <span :class="[ 'absolute top-1 left-1 w-10 h-10 md:w-10 md:h-10 rounded-full flex items-center justify-center text-2xl transition-all duration-500', currentLang === 'en' ? 'md:translate-x-12 bg-blue-400' : 'md:translate-x-0 bg-gradient-to-l from-[#16a6e880]']">
-                        {{ currentLang === 'en' ? '🇺🇸' : '🇧🇷' }}
-                    </span>
-                </button>
+    <div class="absolute right-12 -top-2 md:right-10 md:-top-1 flex items-center perspective">
+        <button @click="toggleLanguage"  class="relative w-12 h-12 transition-transform duration-500 preserve-3d" :class="{ 'rotate-y-180': isFlipped }" >
+
+            <div class="absolute w-full h-full backface-hidden flex items-center justify-center rounded-full shadow-md bg-primary-500 dark:bg-transparent text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"class="w-7 h-7 fill-current">
+                    <path
+                    d="M192 64C209.7 64 224 78.3 224 96L224 128L352 128C369.7 128 384 142.3 384 160C384 177.7 369.7 192 352 192L342.4 192L334 215.1C317.6 260.3 292.9 301.6 261.8 337.1C276 345.9 290.8 353.7 306.2 360.6L356.6 383L418.8 243C423.9 231.4 435.4 224 448 224C460.6 224 472.1 231.4 477.2 243L605.2 531C612.4 547.2 605.1 566.1 589 573.2C572.9 580.3 553.9 573.1 546.8 557L526.8 512L369.3 512L349.3 557C342.1 573.2 323.2 580.4 307.1 573.2C291 566 283.7 547.1 290.9 531L330.7 441.5L280.3 419.1C257.3 408.9 235.3 396.7 214.5 382.7C193.2 399.9 169.9 414.9 145 427.4L110.3 444.6C94.5 452.5 75.3 446.1 67.4 430.3C59.5 414.5 65.9 395.3 81.7 387.4L116.2 370.1C132.5 361.9 148 352.4 162.6 341.8C148.8 329.1 135.8 315.4 123.7 300.9L113.6 288.7C102.3 275.1 104.1 254.9 117.7 243.6C131.3 232.3 151.5 234.1 162.8 247.7L173 259.9C184.5 273.8 197.1 286.7 210.4 298.6C237.9 268.2 259.6 232.5 273.9 193.2L274.4 192L64.1 192C46.3 192 32 177.7 32 160C32 142.3 46.3 128 64 128L160 128L160 96C160 78.3 174.3 64 192 64zM448 334.8L397.7 448L498.3 448L448 334.8z"
+                    />
+                </svg>
             </div>
-        </nav>
+
+            <div class="absolute w-full h-full backface-hidden rotate-y-180 flex items-center justify-center rounded-full shadow-md text-2xl">
+            {{ targetFlag }}
+            </div>
+        </button>
+    </div>
+    </nav>
     </header>
 
     <template v-if="loadMobileNav">
@@ -99,5 +120,18 @@ let { mobileNav, loadMobileNav, toggleMobileNav } = useMobileNav();
     transition-duration: 300ms;
     transition-property: transform;
     transition-timing-function: cubic-bezier(0.6, 0.15, 0.35, 0.8);
+}
+
+.perspective {
+  perspective: 1000px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
 }
 </style>
