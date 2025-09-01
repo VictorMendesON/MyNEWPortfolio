@@ -16,7 +16,7 @@ let showAllWork = ref(false);
         <div class="container px-3 mx-auto max-w-6xl 2xl:max-w-7xl">
             <SectionHeading>{{ t ('My Works')}}</SectionHeading>
 
-            <div class="relative p-5">
+            <div class="relative p-5 md:p-10">
                 <div :class="showAllWork ? '' : 'h-[2100px] overflow-y-hidden md:h-[1650px]'" class="grid grid-cols-1 gap-16 md:gap-24">
                     <Project v-for="project in projects" :key="project.id" :image="project.image" :category="project.category" :title="project.title" :tags="project.tags" :code-link="project.code_link" :live-link="project.live_link">
                         <template #description>
@@ -47,9 +47,7 @@ let showAllWork = ref(false);
                     </NButton>
                 </div>
             </div>
-
             <HireMe />
         </div>
     </section>
-    <!-- Works -->
 </template>

@@ -8,7 +8,7 @@ const { t } = useI18n();
     <section class="relative pt-28 lg:pt-36">
         <div class="container mx-auto max-w-6xl 2xl:max-w-7xl">
             <div class="grid grid-cols-1 p-5 md:p-0">
-                <div class="bg-gradient-to-r from-sky-500 to-indigo-700 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 shadow-md rounded-lg py-7 px-5 md:py-14 md:px-20 flex flex-col items-center justify-center relative">
+                <div class="bg-gradient-to-br from-sky-400 to-indigo-600 via-blue-400 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 shadow-md rounded-lg py-7 px-5 md:py-14 md:px-20 flex flex-col items-center justify-center relative">
                     <h2 class="font-medium md:font-semibold text-2xl md:text-4xl text-center text-white tracking-wide mb-5 md:mb-10 leading-loose">
                        {{ t ('I am available for project based or part time offers!') }} 
                     </h2>

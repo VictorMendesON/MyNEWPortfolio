@@ -27,7 +27,7 @@ let currentTab = ref(1);
 
                 <div class="md:col-span-7 md:p-0 p-5">
                     <div class="tabs mb-10 border-b border-slate-200 dark:border-slate-800 pb-5">
-                        <ul class="grid grid-cols-2 justify-center md:justify-start gap-y-6 md:flex md:flex-wrap md:space-x-6 md:gap-y-0 font-medium">
+                        <ul class="grid grid-cols-2 space-x-2 justify-center md:justify-start gap-y-6 md:flex md:flex-wrap md:space-x-6 md:gap-y-0 font-medium">
                             <li>
                                 <AboutTab @click="currentTab = 1" :class="currentTab === 1 ? 'dark:bg-slate-800 bg-slate-200 dark:text-white' : ''">
                                     <template #icon>

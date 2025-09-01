@@ -98,11 +98,11 @@ const resetForm = () => {
 <template>
   <section id="contact" class="relative py-28 lg:py-36 overflow-hidden">
     <div class="absolute top-44 -left-64 h-[250px] w-[900px] -rotate-25 rounded-3xl bg-gradient-to-r from-cyan-600 to-indigo-800 opacity-20 dark:opacity-20 blur-3xl filter block"></div>
-    <div class="absolute right-[28%] top-0 h-[150px] w-[200px] rotate-12 rounded-3xl bg-gradient-to-l from-teal-600 to-teal-400 blur-3xl filter block opacity-30 dark:opacity-10 lg:top-44 lg:-right-20 lg:h-72 lg:w-[350px] xl:h-80 xl:w-[500px]"></div>
+    <div class="absolute right-[28%] top-0 h-[150px] w-[200px] rotate-12 rounded-3xl bg-gradient-to-l from-teal-600 to-teal-400 blur-3xl filter block opacity-30 dark:opacity-10 lg:top-44 lg:-right-20 lg:h-72 lg:w-[350px] xl:h-80 xl:w-[500px] md:hidden"></div>
     <div class="container px-3 mx-auto max-w-6xl 2xl:max-w-7xl">
       <SectionHeading>{{ t('Get In Touch') }}</SectionHeading>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 dark:text-slate-300 tracking-wide p-10 md:p-0">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 dark:text-slate-300 tracking-wide p-10 md:p-10">
         <div class="md:col-span-5">
           <h3 class="font-medium text-3xl mb-2 dark:text-white">{{ t('Quick Contact') }}</h3>
           <p class="text-lg text-slate-600 dark:text-slate-300">

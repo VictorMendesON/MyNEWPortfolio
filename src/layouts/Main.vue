@@ -5,13 +5,9 @@ import Footer from "@/layouts/Footer.vue";
 
 <template>
     <Header />
-
-    <!-- Main -->
     <main v-scroll-spy="{ offset: 80 }">
         <router-view></router-view>
     </main>
-    <!-- Main -->
-
     <Footer />
 </template>
 
