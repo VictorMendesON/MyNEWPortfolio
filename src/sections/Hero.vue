@@ -14,7 +14,7 @@ onMounted(() => {
         strings: ["Crafting Digital Experiences", "Web Developer"],
         typeSpeed: 50,
         backSpeed: 30,
-        backDelay: 5000,
+        backDelay: 4000,
         loop: true,
         cursorChar: "_",
     });
