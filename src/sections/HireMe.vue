@@ -12,7 +12,7 @@ const { t } = useI18n();
                     <h2 class="font-medium md:font-semibold text-2xl md:text-4xl text-center text-white tracking-wide mb-5 md:mb-10 leading-loose">
                        {{ t ('I am available for project based or part time offers!') }} 
                     </h2>
-                    <LinkButton target="_blank" link="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=victormendesdevv@gmail.com&amp;&amp;su=Need to disscuss with Mr. Victor&amp;body=Hello, I need to talk about a project" class="px-5 py-3 text-md md:text-lg">
+                    <LinkButton target="_blank" href="mailto:victormendesdevv@gmail.com?subject=Need%20to%20discuss%20with%20Mr.%20Victor&body=Hello,%20I%20need%20to%20talk%20about%20a%20project"   class="px-5 py-3 text-md md:text-lg">
                         <span class="dark:tracking-wide">{{t ('Hire Me')}}</span>
                         <template #icon>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 md:w-6 m:h-6">
