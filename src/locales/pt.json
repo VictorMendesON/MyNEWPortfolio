@@ -55,6 +55,9 @@
       },
       "projectC": {
         "description": "<p>É um site institucional desenvolvido como meu primeiro projeto de estágio no CBPF. Utilizei Vue.js, TypeScript, Tailwind CSS e Nuxt.js para construir uma página moderna, responsiva e de fácil navegação, apresentando informações institucionais de forma clara e eficaz.</p>"
+      },
+      "projectD": {
+        "description": "<p>Desenvolvi o site para divulgar um treinamento de 32 horas voltado a transformar conhecimento científico em inovação com impacto real na sociedade. A plataforma apresenta o programa do curso, objetivos e etapas, além de destacar a conexão dos participantes com oportunidades como editais e parcerias do InScience+.</p>"
       }
     },
     "home": {

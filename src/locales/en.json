@@ -53,6 +53,9 @@
     },
     "projectC": {
       "description": "<p>It's an institutional website developed as my first internship project at CBPF. I used Vue.js, TypeScript, Tailwind CSS, and Nuxt.js to build a modern, responsive, and easy-to-navigate page, presenting institutional information clearly and effectively.</p>"
+    },
+    "projectD": {
+      "description": "<p>I developed the website to promote a 32-hour training program designed to transform scientific knowledge into innovation with real impact on society. The platform presents the course structure, objectives, and stages, while also highlighting opportunities for participants to connect with funding calls and partnerships such as InScience+.</p>"
     }
    },
     "home": {

@@ -6,6 +6,7 @@
             "category": "Music Player",
             "title": "UDropped",
             "tags": ["JavaScript", "CSS", "HTML"],
+            "code_link": "https://victormendeson.github.io/UDropped-/",
             "description": "projects.projectA.description"
         },
         {
@@ -22,8 +23,19 @@
             "image": "images/inscience.jpeg",
             "category": "institutional website",
             "title": "InScience",
+            "code_link": "https://inscience.cbpf.br/",
             "tags": ["Tailwind CSS", "TypeScript", "Vue.js", "Nuxt.js"],
             "description": "projects.projectC.description"
+        },
+        {
+            "id": 4,
+            "image": "images/curso_empreendedorismo.png",
+            "category": "institutional website",
+            "title": "Curso Empreendedorismo",
+            "code_link": "https://curso-empreendedorismo.nitrio.org.br/",
+            "tags": ["Tailwind CSS", "TypeScript", "Vue.js", "Nuxt.js"],
+            "description": "projects.projectD.description"
         }
+
     ]
 }
