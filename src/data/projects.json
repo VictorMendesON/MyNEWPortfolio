@@ -23,7 +23,6 @@
             "image": "images/inscience.jpeg",
             "category": "institutional website",
             "title": "InScience",
-            "code_link": "https://inscience.cbpf.br/",
             "tags": ["Tailwind CSS", "TypeScript", "Vue.js", "Nuxt.js"],
             "description": "projects.projectC.description"
         },
