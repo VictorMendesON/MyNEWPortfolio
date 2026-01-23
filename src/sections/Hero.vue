@@ -10,43 +10,23 @@ const { t, locale } = useI18n();
 const typedElement = ref(null);
 let typed = null;
 
-const initTyped = () => {
-  if (typed) {
-    typed.destroy();
-  }
+const initTyped = () => { if (typed) { typed.destroy();}
 
   typed = new Typed(typedElement.value, {
-    strings: [
-      t("hero.crafting_digital_experiences"),
-      t("hero.web_developer")
-    ],
-    typeSpeed: 50,
-    backSpeed: 30,
-    backDelay: 4000,
-    loop: true,
-    cursorChar: "_"
-  });
-};
+    strings: [ t("hero.crafting_digital_experiences"), t("hero.web_developer") ],
+    typeSpeed: 50, backSpeed: 30, backDelay: 4000, loop: true, cursorChar: "_"});};
 
-onMounted(() => {
-  initTyped();
-});
+onMounted(() => { initTyped();});
 
 // quando muda o idioma, recria o Typed
-watch(locale, () => {
-  initTyped();
-});
+watch(locale, () => { initTyped();});
 
-onBeforeUnmount(() => {
-  if (typed) {
-    typed.destroy();
-  }
-});
+onBeforeUnmount(() => { if (typed) { typed.destroy(); } });
 
 const stack = [
-  { icon: 'logos:vue', label: 'Vue', glow: 'hover:shadow-emerald-400/40' },
-  { icon: 'logos:nuxt-icon', label: 'Nuxt', glow: 'hover:shadow-green-400/40' },
-  { icon: 'logos:tailwindcss-icon', label: 'Tailwind', glow: 'hover:shadow-sky-400/40' },
+  { icon: 'logos:vue', label: 'Vue', glow: 'hover:shadow-emerald-500/40' },
+  { icon: 'logos:nuxt-icon', label: 'Nuxt', glow: 'hover:shadow-green-500/40' },
+  { icon: 'logos:tailwindcss-icon', label: 'Tailwind', glow: 'hover:shadow-sky-500/40' },
   { icon: 'logos:typescript-icon', label: 'TypeScript', glow: 'hover:shadow-blue-500/40' }
 ]
 </script>
@@ -79,7 +59,7 @@ const stack = [
                 </a>
             </div>
 
-            <div v-motion :initial="{ opacity: 0,}" :enter="{ opacity: 1, transition: { duration: 500, delay: 1300,},}" class="flex flex-col md:flex-row justify-center items-center mt-10 md:mt-16 space-y-4 md:space-x-7 md:space-y-0 w-72 md:w-full">
+            <div v-motion :initial="{ opacity: 0,}" :enter="{ opacity: 1, transition: { duration: 500, delay: 1300,},}" class="flex flex-col md:flex-row justify-center items-center mt-10 md:mt-16 space-y-4 md:space-x-7 md:space-y-0 w-10/12 md:w-full">
                 <LinkButton link="#about" class="text-sm md:text-xl px-5 py-3 md:px-7 md:py-4"> {{ t ('About Me')}} </LinkButton>
                 <LinkButton btn-type="filled" link="#works" class="text-sm md:text-xl px-5 py-3 md:px-7 md:py-4">
                     <span>{{ t ('See My Works')}}</span>
@@ -91,8 +71,8 @@ const stack = [
                 </LinkButton>
             </div>
 
-            <div class="mt-6 flex flex-wrap justify-center gap-4">
-                <div v-for="(tech, i) in stack" :key="tech.label" v-motion :initial="{opacity: 0, y: 10 }" :enter="{ opacity: 1, y: 0, transition: { delay: 1.0 + i * 0.1} }" class="group flex items-center gap-2 rounded-full bg-white/60 dark:bg-white/10 px-4 py-1.5 text-sm font-medium shadow-sm transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg" :class="tech.glow">
+            <div class="py-6 flex flex-wrap justify-center gap-4">
+                <div v-for="(tech, i) in stack" :key="tech.label" v-motion :initial="{opacity: 0, y: 10 }" :enter="{ opacity: 1, y: 0, transition: { delay: 1.0 + i * 0.1} }" class="group flex items-center gap-2 rounded-full bg-white/60 dark:bg-white/10 px-4 py-1.5 text-sm font-medium shadow-sm transition-all duration-500 hover:-translate-y-1 hover:scale-105 hover:shadow-lg" :class="tech.glow">
                 <Icon :icon="tech.icon" class="size-7 transition-transform duration-300 group-hover:rotate-6"/>
                     <span>{{ tech.label }}</span>
                 </div>
