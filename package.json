@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@iconify/vue": "^5.0.0",
     "@vueuse/motion": "^2.0.0",
     "pinia": "^3.0.3",
     "typed.js": "^2.0.16",

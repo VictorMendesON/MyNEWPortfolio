@@ -1,31 +1,56 @@
 <script setup>
 import LinkButton from "@/components/LinkButton.vue";
 import Typed from "typed.js";
-import { onBeforeUnmount, onMounted, ref } from "vue";
-import { useI18n } from 'vue-i18n'
+import { onBeforeUnmount, onMounted, ref, watch } from "vue";
+import { Icon } from '@iconify/vue'
+import { useI18n } from "vue-i18n";
 
-const { t } = useI18n()
+const { t, locale } = useI18n();
 
 const typedElement = ref(null);
-let typed;
+let typed = null;
+
+const initTyped = () => {
+  if (typed) {
+    typed.destroy();
+  }
+
+  typed = new Typed(typedElement.value, {
+    strings: [
+      t("hero.crafting_digital_experiences"),
+      t("hero.web_developer")
+    ],
+    typeSpeed: 50,
+    backSpeed: 30,
+    backDelay: 4000,
+    loop: true,
+    cursorChar: "_"
+  });
+};
 
 onMounted(() => {
-    typed = new Typed(typedElement.value, {
-        strings: ["Crafting Digital Experiences", "Web Developer"],
-        typeSpeed: 50,
-        backSpeed: 30,
-        backDelay: 4000,
-        loop: true,
-        cursorChar: "_",
-    });
+  initTyped();
+});
+
+// quando muda o idioma, recria o Typed
+watch(locale, () => {
+  initTyped();
 });
 
 onBeforeUnmount(() => {
-    if (typed) {
-        typed.destroy();
-    }
+  if (typed) {
+    typed.destroy();
+  }
 });
+
+const stack = [
+  { icon: 'logos:vue', label: 'Vue', glow: 'hover:shadow-emerald-400/40' },
+  { icon: 'logos:nuxt-icon', label: 'Nuxt', glow: 'hover:shadow-green-400/40' },
+  { icon: 'logos:tailwindcss-icon', label: 'Tailwind', glow: 'hover:shadow-sky-400/40' },
+  { icon: 'logos:typescript-icon', label: 'TypeScript', glow: 'hover:shadow-blue-500/40' }
+]
 </script>
+
 
 <template>
     <section id="home" class="relative min-h-[calc(100vh-85px)] overflow-x-clip bg-slate-100 dark:bg-[#0B1120]">
@@ -37,9 +62,9 @@ onBeforeUnmount(() => {
 
         <div class="container mx-auto px-3 flex flex-col justify-center items-center min-h-[calc(100vh-85px)] max-w-6xl 2xl:max-w-7xl">
             <h1 v-motion :initial="{ opacity: 0,}" :enter="{ opacity: 1, transition: { duration: 500, delay: 700,},}"class="text-4xl md:text-6xl lg:text-8xl font-bold font-heading dark:text-slate-100 mb-5 text-center">
-                I'm <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-purple-500 dark:from-sky-400 dark:to-teal-400">Victor Mendes</span>
+                {{ t('im') }} <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-purple-500 dark:from-sky-400 dark:to-teal-400">{{ t('victor_mendes') }}</span>
             </h1>
-            <h2 v-motion :initial="{ opacity: 0,}" :enter="{ opacity: 1, transition: { duration: 500, delay: 900,},}" class="text-2xl md:text-5xl font-semibold font-heading dark:text-slate-100 text-center">
+            <h2 v-motion :initial="{ opacity: 0 }" :enter="{ opacity: 1, transition: { duration: 500, delay: 900 } }" class="text-2xl md:text-5xl font-semibold font-heading dark:text-slate-100 text-center">
                 <span ref="typedElement"></span>
             </h2>
 
@@ -64,6 +89,13 @@ onBeforeUnmount(() => {
                         </svg>
                     </template>
                 </LinkButton>
+            </div>
+
+            <div class="mt-6 flex flex-wrap justify-center gap-4">
+                <div v-for="(tech, i) in stack" :key="tech.label" v-motion :initial="{opacity: 0, y: 10 }" :enter="{ opacity: 1, y: 0, transition: { delay: 1.0 + i * 0.1} }" class="group flex items-center gap-2 rounded-full bg-white/60 dark:bg-white/10 px-4 py-1.5 text-sm font-medium shadow-sm transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-lg" :class="tech.glow">
+                <Icon :icon="tech.icon" class="size-7 transition-transform duration-300 group-hover:rotate-6"/>
+                    <span>{{ tech.label }}</span>
+                </div>
             </div>
         </div>
     </section>
