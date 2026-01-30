@@ -64,7 +64,10 @@
       },
       "projectD": {
         "description": "<p>Desenvolvi o site para divulgar um treinamento de 32 horas voltado a transformar conhecimento científico em inovação com impacto real na sociedade. A plataforma apresenta o programa do curso, objetivos e etapas, além de destacar a conexão dos participantes com oportunidades como editais e parcerias do InScience+.</p>"
-      }
+      },
+      "projectE": {
+      "description": "<p>Participei do desenvolvimento do site da UNIPOSRIO 2026, sendo responsável pela parte estética (UI/UX) da aplicação e pela implementação de funcionalidades essenciais do front-end. Atuei na validação de formulários, garantindo a integridade e a correta entrada de dados, além de colaborar na autenticação de login, focando em segurança, usabilidade e boa experiência do usuário. Também contribuí para a criação de uma interface moderna, responsiva e alinhada à identidade visual do projeto.</p>"
+    }
     },
     "home": {
     "strings": [

@@ -63,6 +63,9 @@
     },
     "projectD": {
       "description": "<p>I developed the website to promote a 32-hour training program designed to transform scientific knowledge into innovation with real impact on society. The platform presents the course structure, objectives, and stages, while also highlighting opportunities for participants to connect with funding calls and partnerships such as InScience+.</p>"
+    },
+    "projectE": {
+      "description": "<p>I participated in the development of the UNIPOSRIO 2026 website, being responsible for the UI/UX (aesthetic) aspects of the application and for implementing essential front-end functionalities. I worked on form validation, ensuring data integrity and proper user input, and also collaborated on login authentication, focusing on security, usability, and a positive user experience. Additionally, I contributed to building a modern, responsive interface aligned with the project’s visual identity.</p>"
     }
    },
     "home": {
