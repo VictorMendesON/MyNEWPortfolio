@@ -1,6 +1,31 @@
 {
     "projects": [
         {
+            "id": 3,
+            "image": "images/inscience.jpeg",
+            "category": "institutional website",
+            "title": "InScience",
+            "tags": ["Tailwind CSS", "TypeScript", "Vue.js", "Nuxt.js"],
+            "description": "projects.projectC.description"
+        },
+                {
+            "id": 4,
+            "image": "images/curso_empreendedorismo.png",
+            "category": "institutional website",
+            "title": "Curso Empreendedorismo",
+            "code_link": "https://curso-empreendedorismo.nitrio.org.br/",
+            "tags": ["Tailwind CSS", "TypeScript", "Vue.js", "Nuxt.js"],
+            "description": "projects.projectD.description"
+        },
+                {
+            "id": 5,
+            "image": "images/uniposrio.jpeg",
+            "category": "institutional website",
+            "title": "UNIPOSRIO",
+            "tags": ["Tailwind CSS", "TypeScript", "Vue.js", "Nuxt.js"],
+            "description": "projects.projectE.description"
+        },
+        {
             "id": 1,
             "image": "images/Udropped.jpeg",
             "category": "Music Player",
@@ -17,31 +42,6 @@
             "tags": ["Tailwind CSS", "HTML", "JavaScript"],
             "code_link": "https://github.com/VictorMendesON/PontodoA-a-",
             "description": "projects.projectB.description"
-        },
-        {
-            "id": 3,
-            "image": "images/inscience.jpeg",
-            "category": "institutional website",
-            "title": "InScience",
-            "tags": ["Tailwind CSS", "TypeScript", "Vue.js", "Nuxt.js"],
-            "description": "projects.projectC.description"
-        },
-        {
-            "id": 4,
-            "image": "images/curso_empreendedorismo.png",
-            "category": "institutional website",
-            "title": "Curso Empreendedorismo",
-            "code_link": "https://curso-empreendedorismo.nitrio.org.br/",
-            "tags": ["Tailwind CSS", "TypeScript", "Vue.js", "Nuxt.js"],
-            "description": "projects.projectD.description"
-        },
-        {
-            "id": 5,
-            "image": "images/uniposrio.jpeg",
-            "category": "institutional website",
-            "title": "UNIPOSRIO",
-            "tags": ["Tailwind CSS", "TypeScript", "Vue.js", "Nuxt.js"],
-            "description": "projects.projectE.description"
         }
 
     ]
