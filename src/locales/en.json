@@ -44,7 +44,13 @@
     "subjectPlaceholder": "Enter the subject of the message (optional)",
     "message": "Message",
     "messagePlaceholder": "Enter your message",
-    "sendMessage": "Send Message"
+    "sendMessage": "Send Message",
+
+    "errorName": "Name must be at least 4 characters",
+    "errorEmail": "Please enter a valid email address",
+    "errorMessage": "Message must be at least 10 characters",
+    "successMessage": "Message sent successfully!",
+    "serverError": "Something went wrong. Please try again later."
   },
   "Brazil, Rio de Janeiro": "Brazil, Rio de Janeiro",
   "footer.designedBy": "Designed & Built by",

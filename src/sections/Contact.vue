@@ -26,72 +26,82 @@ const contactFormErrors = reactive({
 
 const loading = ref(false);
 const showToast = ref(false);
-const handleClose = () => (showToast.value = false);
+const toastMessage = ref('');
+const toastType = ref('success');
 
+const handleClose = () => (showToast.value = false);
 
 const FORM_ENDPOINT = "https://formsubmit.co/ajax/victormendesdevv@gmail.com";
 
-const submitContactForm = async () => {
-  contactFormErrors.name = '';
-  contactFormErrors.email = '';
-  contactFormErrors.subject = '';
-  contactFormErrors.message = '';
+const validateForm = () => {
+  let isValid = true;
+  
+  // Reset de erros
+  Object.keys(contactFormErrors).forEach(key => contactFormErrors[key] = '');
 
-  // Validação simples
   if (contactForm.name.length <= 3) {
-    contactFormErrors.name = 'Please enter your name';
-    return;
+    contactFormErrors.name = t('form.errorName'); // Use i18n para erros também
+    isValid = false;
   }
-  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(contactForm.email)) {
-    contactFormErrors.email = 'Please enter a valid email address';
-    return;
+    contactFormErrors.email = t('form.errorEmail');
+    isValid = false;
   }
-  if (contactForm.message.length <= 20) {
-    contactFormErrors.message = 'Please enter your message';
-    return;
+  
+  if (contactForm.message.length <= 10) {
+    contactFormErrors.message = t('form.errorMessage');
+    isValid = false;
   }
+
+  return isValid;
+};
+
+const submitContactForm = async () => {
+  if (!validateForm()) return;
 
   loading.value = true;
-
-  const formData = {
-    name: contactForm.name,
-    email: contactForm.email,
-    subject: contactForm.subject,
-    message: contactForm.message,
-    _captcha: 'false',
-    _template: 'table'
-  };
 
   try {
     const response = await fetch(FORM_ENDPOINT, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify({
+        ...contactForm,
+        _captcha: 'false',
+        _template: 'table'
+      })
     });
 
-    if (!response.ok) {
-      throw new Error('Erro ao enviar. Tente novamente mais tarde.');
+    if (response.ok) {
+      toastType.value = 'success';
+      toastMessage.value = t('form.successMessage');
+      showToast.value = true;
+      resetForm();
+    } else {
+      throw new Error();
     }
 
-    resetForm();
-    showToast.value = true;
-
   } catch (error) {
-    console.error(error);
-    alert('Erro ao enviar o formulário. Verifique sua conexão ou tente mais tarde.');
+    toastType.value = 'error';
+    toastMessage.value = t('form.serverError');
+    showToast.value = true;
   } finally {
     loading.value = false;
   }
 };
 
 const resetForm = () => {
-  contactForm.name = '';
-  contactForm.email = '';
-  contactForm.subject = '';
-  contactForm.message = '';
+  Object.assign(contactForm, {
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
 };
 </script>
 
@@ -157,41 +167,84 @@ const resetForm = () => {
         </div>
 
         <div class="md:col-span-7">
-          <form action="https://formsubmit.co/victormendesdevv@gmail.com" method="POST" class="grid grid-cols-2 gap-x-6 gap-y-8">
+          <form @submit.prevent="submitContactForm" class="grid grid-cols-2 gap-x-6 gap-y-8">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://seusite.com/obrigado">
 
             <div class="col-span-2 md:col-span-1 flex flex-col space-y-3">
               <InputLabel for="name" :title="t('form.name')" :required="true" />
-              <InputField type="text" id="name" name="name" :placeholder="t('form.namePlaceholder')" required />
+              <InputField 
+                v-model="contactForm.name" 
+                type="text" 
+                id="name" 
+                name="name" 
+                :placeholder="t('form.namePlaceholder')" 
+                required 
+              />
+              <span v-if="contactFormErrors.name" class="text-red-500 text-xs">{{ contactFormErrors.name }}</span>
             </div>
 
             <div class="col-span-2 md:col-span-1 flex flex-col space-y-3">
               <InputLabel for="email" :title="t('form.email')" :required="true" />
-              <InputField type="email" id="email" name="email" :placeholder="t('form.emailPlaceholder')" required />
+              <InputField 
+                v-model="contactForm.email" 
+                type="email" 
+                id="email" 
+                name="email" 
+                :placeholder="t('form.emailPlaceholder')" 
+                required 
+              />
+              <span v-if="contactFormErrors.email" class="text-red-500 text-xs">{{ contactFormErrors.email }}</span>
             </div>
 
             <div class="col-span-2 flex flex-col space-y-3">
               <InputLabel for="subject" :title="t('form.subject')" />
-              <InputField type="text" id="subject" name="subject" :placeholder="t('form.subjectPlaceholder')" />
+              <InputField 
+                v-model="contactForm.subject" 
+                type="text" 
+                id="subject" 
+                name="subject" 
+                :placeholder="t('form.subjectPlaceholder')" 
+              />
             </div>
 
             <div class="col-span-2 flex flex-col space-y-3">
               <InputLabel for="message" :title="t('form.message')" :required="true" />
-              <TextArea id="message" name="message" class="h-40" :placeholder="t('form.messagePlaceholder')" required />
+              <TextArea 
+                v-model="contactForm.message" 
+                id="message" 
+                name="message" 
+                class="h-40" 
+                :placeholder="t('form.messagePlaceholder')" 
+                required 
+              />
+              <span v-if="contactFormErrors.message" class="text-red-500 text-xs">{{ contactFormErrors.message }}</span>
             </div>
 
             <div class="col-span-2 flex">
-              <NButton :loading="loading" :disabled="loading" type="submit" btn-type="filled" class="px-5 py-3 text-md">
+              <NButton 
+                :loading="loading" 
+                :disabled="loading" 
+                type="submit" 
+                btn-type="filled" 
+                class="px-5 py-3 text-md"
+              >
                 <span class="mr-1">{{ t('form.sendMessage') }}</span>
                 <template #icon>
-                   <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-5 h-5" viewBox="0 0 16 16"><path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
-                    </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-5 h-5" viewBox="0 0 16 16">
+                    <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
+                  </svg>
                 </template>
               </NButton>
             </div>
           </form>
+
+          <Toast 
+            v-if="showToast" 
+            :message="toastMessage" 
+            :type="toastType" 
+            @close="showToast = false" 
+          />
         </div>
       </div>
     </div>

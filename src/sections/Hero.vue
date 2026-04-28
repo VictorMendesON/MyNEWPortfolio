@@ -18,7 +18,6 @@ const initTyped = () => { if (typed) { typed.destroy();}
 
 onMounted(() => { initTyped();});
 
-// quando muda o idioma, recria o Typed
 watch(locale, () => { initTyped();});
 
 onBeforeUnmount(() => { if (typed) { typed.destroy(); } });
