@@ -16,7 +16,6 @@
 }
 /** HEADER **/
 
-
 /** WORKS **/
 @media (min-width: 576px) {
     .single-project:nth-of-type(2n + 2) .project-content {
@@ -46,7 +45,6 @@
     }
 }
 /** WORKS **/
-
 
 /** PATTERNS **/
 .bg-hero-pattern-dark {

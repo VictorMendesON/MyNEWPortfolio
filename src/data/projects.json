@@ -8,7 +8,7 @@
             "tags": ["Tailwind CSS", "TypeScript", "Vue.js", "Nuxt.js"],
             "description": "projects.projectC.description"
         },
-                {
+        {
             "id": 4,
             "image": "images/curso_empreendedorismo.png",
             "category": "institutional website",
@@ -17,7 +17,7 @@
             "tags": ["Tailwind CSS", "TypeScript", "Vue.js", "Nuxt.js"],
             "description": "projects.projectD.description"
         },
-                {
+        {
             "id": 5,
             "image": "images/uniposrio.jpeg",
             "category": "institutional website",
@@ -42,7 +42,14 @@
             "tags": ["Tailwind CSS", "HTML", "JavaScript"],
             "code_link": "https://github.com/VictorMendesON/PontodoA-a-",
             "description": "projects.projectB.description"
+        },
+        {
+            "id": 2,
+            "image": "images/cgs.jpeg",
+            "category": "institutional website",
+            "title": "CGS",
+            "tags": ["Tailwind CSS", "GO", "Vue.js", "Nuxt.js"],
+            "description": "projects.projectF.description"
         }
-
     ]
 }

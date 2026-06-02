@@ -1,83 +1,220 @@
 <script setup>
-import LinkButton from "@/components/LinkButton.vue";
-import Typed from "typed.js";
-import { onBeforeUnmount, onMounted, ref, watch } from "vue";
-import { Icon } from '@iconify/vue'
-import { useI18n } from "vue-i18n";
+import LinkButton from '@/components/LinkButton.vue';
+import Typed from 'typed.js';
+import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
+import { Icon } from '@iconify/vue';
+import { useI18n } from 'vue-i18n';
 
 const { t, locale } = useI18n();
 
 const typedElement = ref(null);
 let typed = null;
 
-const initTyped = () => { if (typed) { typed.destroy();}
+const initTyped = () => {
+    if (typed) {
+        typed.destroy();
+    }
 
-  typed = new Typed(typedElement.value, {
-    strings: [ t("hero.crafting_digital_experiences"), t("hero.web_developer") ],
-    typeSpeed: 50, backSpeed: 30, backDelay: 4000, loop: true, cursorChar: "_"});};
+    typed = new Typed(typedElement.value, {
+        strings: [
+            t('hero.crafting_digital_experiences'),
+            t('hero.web_developer'),
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 4000,
+        loop: true,
+        cursorChar: '_',
+    });
+};
 
-onMounted(() => { initTyped();});
+onMounted(() => {
+    initTyped();
+});
 
-watch(locale, () => { initTyped();});
+watch(locale, () => {
+    initTyped();
+});
 
-onBeforeUnmount(() => { if (typed) { typed.destroy(); } });
+onBeforeUnmount(() => {
+    if (typed) {
+        typed.destroy();
+    }
+});
 
 const stack = [
-  { icon: 'logos:vue', label: 'Vue', glow: 'hover:shadow-emerald-500/40' },
-  { icon: 'logos:nuxt-icon', label: 'Nuxt', glow: 'hover:shadow-green-500/40' },
-  { icon: 'logos:tailwindcss-icon', label: 'Tailwind', glow: 'hover:shadow-sky-500/40' },
-  { icon: 'logos:typescript-icon', label: 'TypeScript', glow: 'hover:shadow-blue-500/40' }
-]
+    { icon: 'logos:vue', label: 'Vue', glow: 'hover:shadow-emerald-500/40' },
+    {
+        icon: 'logos:nuxt-icon',
+        label: 'Nuxt',
+        glow: 'hover:shadow-green-500/40',
+    },
+    {
+        icon: 'logos:tailwindcss-icon',
+        label: 'Tailwind',
+        glow: 'hover:shadow-sky-500/40',
+    },
+    {
+        icon: 'logos:typescript-icon',
+        label: 'TypeScript',
+        glow: 'hover:shadow-blue-500/40',
+    },
+];
 </script>
 
-
 <template>
-    <section id="home" class="relative min-h-[calc(100vh-85px)] overflow-x-clip bg-slate-100 dark:bg-[#0B1120]">
-        <div class="absolute top-0 left-0 right-0 bottom-0 bg-hero-pattern dark:hidden block"></div>
-        <div class="absolute top-0 left-0 right-0 bottom-0 bg-hero-pattern-dark hidden dark:block"></div>
-        <div class="absolute right-[28%] top-0 h-[150px] w-[200px] rotate-12 rounded-3xl bg-gradient-to-l from-teal-600 to-teal-400 blur-3xl filter block opacity-30 dark:opacity-10 lg:top-44 lg:-right-20 lg:h-72 lg:w-[350px] xl:h-80 xl:w-[500px]"></div>
-        <div class="absolute bottom-44 -left-64 h-[150px] w-[900px] -rotate-45 rounded-3xl bg-gradient-to-r from-violet-600 to-indigo-500 opacity-30 dark:opacity-30 blur-3xl filter block lg:bottom-24 lg:-left-20 lg:h-28 lg:w-[250px] lg:-rotate-12 dark:lg:opacity-20 lg:opacity-30 xl:h-40 xl:w-[400px]"></div>
-        <div class="absolute left-[28%] top-28 hidden rotate-12 rounded-3xl bg-sky-500 blur-3xl filter opacity-20 dark:opacity-30 lg:h-32 lg:w-[450px] lg:block xl:h-44 xl:w-[600px]"></div>
+    <section
+        id="home"
+        class="relative min-h-[calc(100vh-85px)] overflow-x-clip bg-slate-100 dark:bg-[#0B1120]"
+    >
+        <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-hero-pattern dark:hidden block"
+        ></div>
+        <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-hero-pattern-dark hidden dark:block"
+        ></div>
+        <div
+            class="absolute right-[28%] top-0 h-[150px] w-[200px] rotate-12 rounded-3xl bg-gradient-to-l from-teal-600 to-teal-400 blur-3xl filter block opacity-30 dark:opacity-10 lg:top-44 lg:-right-20 lg:h-72 lg:w-[350px] xl:h-80 xl:w-[500px]"
+        ></div>
+        <div
+            class="absolute bottom-44 -left-64 h-[150px] w-[900px] -rotate-45 rounded-3xl bg-gradient-to-r from-violet-600 to-indigo-500 opacity-30 dark:opacity-30 blur-3xl filter block lg:bottom-24 lg:-left-20 lg:h-28 lg:w-[250px] lg:-rotate-12 dark:lg:opacity-20 lg:opacity-30 xl:h-40 xl:w-[400px]"
+        ></div>
+        <div
+            class="absolute left-[28%] top-28 hidden rotate-12 rounded-3xl bg-sky-500 blur-3xl filter opacity-20 dark:opacity-30 lg:h-32 lg:w-[450px] lg:block xl:h-44 xl:w-[600px]"
+        ></div>
 
-        <div class="container mx-auto px-3 flex flex-col justify-center items-center min-h-[calc(100vh-85px)] max-w-6xl 2xl:max-w-7xl">
-            <h1 v-motion :initial="{ opacity: 0,}" :enter="{ opacity: 1, transition: { duration: 500, delay: 700,},}"class="text-4xl md:text-6xl lg:text-8xl font-bold font-heading dark:text-slate-100 mb-5 text-center">
-                {{ t('im') }} <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-purple-500 dark:from-sky-400 dark:to-teal-400">{{ t('victor_mendes') }}</span>
+        <div
+            class="container mx-auto px-3 flex flex-col justify-center items-center min-h-[calc(100vh-85px)] max-w-6xl 2xl:max-w-7xl"
+        >
+            <h1
+                v-motion
+                :initial="{ opacity: 0 }"
+                :enter="{
+                    opacity: 1,
+                    transition: { duration: 500, delay: 700 },
+                }"
+                class="text-4xl md:text-6xl lg:text-8xl font-bold font-heading dark:text-slate-100 mb-5 text-center"
+            >
+                {{ t('im') }}
+                <span
+                    class="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-purple-500 dark:from-sky-400 dark:to-teal-400"
+                    >{{ t('victor_mendes') }}</span
+                >
             </h1>
-            <h2 v-motion :initial="{ opacity: 0 }" :enter="{ opacity: 1, transition: { duration: 500, delay: 900 } }" class="text-2xl md:text-5xl font-semibold font-heading dark:text-slate-100 text-center">
+            <h2
+                v-motion
+                :initial="{ opacity: 0 }"
+                :enter="{
+                    opacity: 1,
+                    transition: { duration: 500, delay: 900 },
+                }"
+                class="text-2xl md:text-5xl font-semibold font-heading dark:text-slate-100 text-center"
+            >
                 <span ref="typedElement"></span>
             </h2>
 
-            <div v-motion :initial="{ opacity: 0,}" :enter="{ opacity: 1, transition: { duration: 500, delay: 1100,},}" class="flex justify-center mt-10 md:mt-16 space-x-6 dark:text-slate-300 text-gray-600">
-                <a href="https://github.com/VictorMendesON" target="_blank" class="group flex items-center space-x-3">
-                    <img class="w-6 md:w-7" src="/images/github.png" alt="Victor Github" />
-                    <span class="text-lg group-hover:text-gray-700 dark:group-hover:text-white font-medium transition-all duration-300">Github</span>
+            <div
+                v-motion
+                :initial="{ opacity: 0 }"
+                :enter="{
+                    opacity: 1,
+                    transition: { duration: 500, delay: 1100 },
+                }"
+                class="flex justify-center mt-10 md:mt-16 space-x-6 dark:text-slate-300 text-gray-600"
+            >
+                <a
+                    href="https://github.com/VictorMendesON"
+                    target="_blank"
+                    class="group flex items-center space-x-3"
+                >
+                    <img
+                        class="w-6 md:w-7"
+                        src="/images/github.png"
+                        alt="Victor Github"
+                    />
+                    <span
+                        class="text-lg group-hover:text-gray-700 dark:group-hover:text-white font-medium transition-all duration-300"
+                        >Github</span
+                    >
                 </a>
-                <a href="https://www.linkedin.com/in/victor-de-paula-0a9b75215/" target="_blank" class="group flex items-center space-x-3">
-                    <img class="w-6 md:w-7" src="/images/linkedin.png" alt="Victor Linkedin" />
-                    <span class="text-lg group-hover:text-gray-700 dark:group-hover:text-white font-medium transition-all duration-300">Linkedin</span>
+                <a
+                    href="https://www.linkedin.com/in/victor-de-paula-0a9b75215/"
+                    target="_blank"
+                    class="group flex items-center space-x-3"
+                >
+                    <img
+                        class="w-6 md:w-7"
+                        src="/images/linkedin.png"
+                        alt="Victor Linkedin"
+                    />
+                    <span
+                        class="text-lg group-hover:text-gray-700 dark:group-hover:text-white font-medium transition-all duration-300"
+                        >Linkedin</span
+                    >
                 </a>
             </div>
 
-            <div v-motion :initial="{ opacity: 0,}" :enter="{ opacity: 1, transition: { duration: 500, delay: 1300,},}" class="flex flex-col md:flex-row justify-center items-center mt-10 md:mt-16 space-y-4 md:space-x-7 md:space-y-0 w-10/12 md:w-full">
-                <LinkButton link="#about" class="text-sm md:text-xl px-5 py-3 md:px-7 md:py-4"> {{ t ('About Me')}} </LinkButton>
-                <LinkButton btn-type="filled" link="#works" class="text-sm md:text-xl px-5 py-3 md:px-7 md:py-4">
-                    <span>{{ t ('See My Works')}}</span>
+            <div
+                v-motion
+                :initial="{ opacity: 0 }"
+                :enter="{
+                    opacity: 1,
+                    transition: { duration: 500, delay: 1300 },
+                }"
+                class="flex flex-col md:flex-row justify-center items-center mt-10 md:mt-16 space-y-4 md:space-x-7 md:space-y-0 w-10/12 md:w-full"
+            >
+                <LinkButton
+                    link="#about"
+                    class="text-sm md:text-xl px-5 py-3 md:px-7 md:py-4"
+                >
+                    {{ t('About Me') }}
+                </LinkButton>
+                <LinkButton
+                    btn-type="filled"
+                    link="#works"
+                    class="text-sm md:text-xl px-5 py-3 md:px-7 md:py-4"
+                >
+                    <span>{{ t('See My Works') }}</span>
                     <template #icon>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 md:h-6 md:w-6 animate-bounce">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75" />
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="w-5 h-5 md:h-6 md:w-6 animate-bounce"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75"
+                            />
                         </svg>
                     </template>
                 </LinkButton>
             </div>
 
             <div class="py-6 flex flex-wrap justify-center gap-4">
-                <div v-for="(tech, i) in stack" :key="tech.label" v-motion :initial="{opacity: 0, y: 10 }" :enter="{ opacity: 1, y: 0, transition: { delay: 1.0 + i * 0.1} }" class="group flex items-center gap-2 rounded-full bg-white/60 dark:bg-white/10 px-4 py-1.5 text-sm font-medium shadow-sm transition-all duration-500 hover:-translate-y-1 hover:scale-105 hover:shadow-lg" :class="tech.glow">
-                <Icon :icon="tech.icon" class="size-7 transition-transform duration-300 group-hover:rotate-6"/>
+                <div
+                    v-for="(tech, i) in stack"
+                    :key="tech.label"
+                    v-motion
+                    :initial="{ opacity: 0, y: 10 }"
+                    :enter="{
+                        opacity: 1,
+                        y: 0,
+                        transition: { delay: 1.0 + i * 0.1 },
+                    }"
+                    class="group flex items-center gap-2 rounded-full bg-white/60 dark:bg-white/10 px-4 py-1.5 text-sm font-medium shadow-sm transition-all duration-500 hover:-translate-y-1 hover:scale-105 hover:shadow-lg"
+                    :class="tech.glow"
+                >
+                    <Icon
+                        :icon="tech.icon"
+                        class="size-7 transition-transform duration-300 group-hover:rotate-6"
+                    />
                     <span>{{ tech.label }}</span>
                 </div>
             </div>
         </div>
     </section>
 </template>
-
-
