@@ -43,7 +43,11 @@ onBeforeUnmount(() => {
 });
 
 const stack = [
-    { icon: 'logos:vue', label: 'Vue', glow: 'hover:shadow-emerald-500/40' },
+    { 
+        icon: 'logos:vue', 
+        label: 'Vue', 
+        glow: 'hover:shadow-emerald-500/40' 
+    },
     {
         icon: 'logos:nuxt-icon',
         label: 'Nuxt',
@@ -59,6 +63,26 @@ const stack = [
         label: 'TypeScript',
         glow: 'hover:shadow-blue-500/40',
     },
+     {
+        icon: 'logos:go',
+        label: 'Go',
+        glow: 'hover:shadow-cyan-500/40',
+    },
+    {
+        icon: 'logos:mongodb-icon',
+        label: 'MongoDB',
+        glow: 'hover:shadow-green-600/40',
+    },
+    {
+        icon: 'logos:git-icon',
+        label: 'Git',
+        glow: 'hover:shadow-orange-500/40',
+    },
+    {
+        icon: 'logos:nodejs-icon',
+        label: 'Node.js',
+        glow: 'hover:shadow-lime-500/40',
+    }
 ];
 </script>
 
@@ -194,7 +218,7 @@ const stack = [
                 </LinkButton>
             </div>
 
-            <div class="py-6 flex flex-wrap justify-center gap-4">
+            <div class="py-6 flex flex-wrap sjustify-center gap-4">
                 <div
                     v-for="(tech, i) in stack"
                     :key="tech.label"
